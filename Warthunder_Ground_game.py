@@ -15,12 +15,12 @@ from ..enums import KeymastersKeepGamePlatforms
 
 # Option Dataclass
 @dataclass
-class WarthunderArchipelagoOptions:
+class WarthunderGroundArchipelagoOptions:
     pass
 
 # Main Class
-class WarthunderGame(Game):
-    name = "WarThunder"
+class WarthunderGroundGame(Game):
+    name = "WarThunderGround"
     platform = KeymastersKeepGamePlatforms.PC
 
     platforms_other = [
@@ -32,7 +32,7 @@ class WarthunderGame(Game):
 
     is_adult_only_or_unrated = False
 
-    options_cls = WarthunderArchipelagoOptions
+    options_cls = WarthunderGroundArchipelagoOptions
 
     # Optional Game Constraints
     def optional_game_constraint_templates(self) -> List[GameObjectiveTemplate]:
