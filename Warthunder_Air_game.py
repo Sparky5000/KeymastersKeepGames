@@ -40,7 +40,7 @@ class WarthunderAirGame(Game):
             GameObjectiveTemplate(
                 label="Cannot use VEHICLETYPE",
                 data={
-                    "VEHICLETYPE": (self.vehicletypes2, 1),
+                    "VEHICLETYPE": (self.vehicletypes, 1),
                 },
             ),
         ]
