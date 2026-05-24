@@ -53,7 +53,7 @@ class WarthunderGroundGame(Game):
                 data={
                     "BATTLERATING": (self.battlerating, 1),
                 },
-                weight=12,
+                weight=10,
             ),
             GameObjectiveTemplate(
                 label="Win a battle as NATION",
@@ -92,9 +92,22 @@ class WarthunderGroundGame(Game):
                 weight=5,
             ),
             GameObjectiveTemplate(
+                label="Get the MEDALS medal MEDALAMMOUNT times in a battle",
+                data={
+                    "MEDAL": (self.medals, 1),
+                    "MEDALAMMOUNT": (self.medalammounts, 1),
+                },
+                weight=7
+            ),
+            GameObjectiveTemplate(
                 label="Win a Battle by Dropping a Nuke",
                 data=dict(),
                 weight=1,
+            ),
+            GameObjectiveTemplate(
+                label="Take control of a Capture Point",
+                data=dict(),
+                weight=7,
             ),
         ]
 
@@ -176,8 +189,18 @@ class WarthunderGroundGame(Game):
             "China",
             "Sweden",
         ]
+    
+    @staticmethod
+    def medals() -> List[str]:
+        return [
+            "Intelligence",
+            "According to Intelligence",
+        ]
+    
+    @staticmethod
+    def medalammounts() -> List[str]:
+        return range(2, 5)
 
-    # picks a random number from 20-30
     @staticmethod
     def enemy_count() -> range:
         return range(4, 10)
