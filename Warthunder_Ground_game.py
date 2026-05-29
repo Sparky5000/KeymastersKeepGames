@@ -92,10 +92,10 @@ class WarthunderGroundGame(Game):
                 weight=5,
             ),
             GameObjectiveTemplate(
-                label="Get the MEDALS medal MEDALAMMOUNT times in a battle",
+                label="Get the MEDAL medal AMMOUNT times in a battle",
                 data={
                     "MEDAL": (self.medals, 1),
-                    "MEDALAMMOUNT": (self.medalammounts, 1),
+                    "AMMOUNT": (self.ammounts, 1),
                 },
                 weight=7
             ),
@@ -198,7 +198,7 @@ class WarthunderGroundGame(Game):
         ]
     
     @staticmethod
-    def medalammounts() -> List[str]:
+    def ammounts() -> List[str]:
         return range(2, 5)
 
     @staticmethod
